@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grah Pravesh | Hyderabad</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #100b07;
+    color: #e8cb83;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 25px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #49321b 0%,
+            #24180d 48%,
+            #100b07 100%
+        );
+}
+
+/* GOLDEN FRAME */
+
+.frame {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(211,176,100,0.7);
+    pointer-events: none;
+}
+
+.frame::before,
+.frame::after {
+    content: "❧";
+    position: absolute;
+    color: #c6a15b;
+    font-size: 38px;
+}
+
+.frame::before {
+    top: -17px;
+    left: -8px;
+}
+
+.frame::after {
+    bottom: -17px;
+    right: -8px;
+    transform: rotate(180deg);
+}
+
+.corner {
+    position: absolute;
+    color: #d2ad63;
+    font-size: 30px;
+}
+
+.top-right {
+    top: 24px;
+    right: 27px;
+}
+
+.bottom-left {
+    bottom: 24px;
+    left: 27px;
+    transform: rotate(180deg);
+}
+
+/* MAIN CONTENT */
+
+.content {
+    width: 100%;
+    max-width: 1150px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    font-size: 15px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #d2b16b;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: clamp(55px, 8vw, 105px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: #f4dda4;
+    text-shadow: 0 0 35px rgba(205,166,87,0.25);
+}
+
+.subtitle {
+    font-size: 18px;
+    letter-spacing: 11px;
+    margin-top: 18px;
+    color: #d6b56e;
+}
+
+.ornament {
+    margin: 27px auto;
+    color: #d0aa60;
+    font-size: 19px;
+    letter-spacing: 8px;
+}
+
+/* COUNTDOWN */
+
+.countdown-heading {
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+    color: #d8bc7d;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.time-box {
+    width: 115px;
+    padding: 22px 10px;
+
+    border: 1px solid rgba(215,178,100,0.75);
+
+    background: linear-gradient(
+        145deg,
+        rgba(102,72,34,0.5),
+        rgba(24,16,9,0.85)
+    );
+
+    box-shadow:
+        0 0 25px rgba(194,151,65,0.10),
+        inset 0 0 15px rgba(194,151,65,0.06);
+}
+
+.number {
+    display: block;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    color: #f5dfa4;
+    font-variant-numeric: tabular-nums;
+}
+
+.label {
+    display: block;
+    margin-top: 13px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #d1b16d;
+}
+
+.bottom-text {
+    margin-top: 36px;
+    font-size: 17px;
+    letter-spacing: 4px;
+    color: #dfc17b;
+}
+
+.small-text {
+    margin-top: 13px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #b99a5c;
+}
+
+/* SHEHNAI MUSICIANS */
+
+.musician {
+    position: absolute;
+    width: 255px;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    object-fit: contain;
+    filter: drop-shadow(0 0 18px rgba(215,174,89,0.12));
+}
+
+.musician.left {
+    left: 3%;
+}
+
+.musician.right {
+    right: 3%;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* GOLDEN PARTICLES */
+
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #e8cb83;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 7s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 0.8;
+    }
+}
+
+/* MOBILE DESIGN */
+
+@media (max-width: 900px) {
+
+    .musician {
+        width: 175px;
+        opacity: 0.9;
+    }
+
+    .musician.left {
+        left: -30px;
+    }
+
+    .musician.right {
+        right: -30px;
+    }
+
+    .time-box {
+        width: 85px;
+    }
+
+    .number {
+        font-size: 37px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 35px 12px;
+    }
+
+    .frame {
+        inset: 12px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-top: 145px;
+    }
+
+    .title {
+        font-size: 49px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        letter-spacing: 6px;
+    }
+
+    .musician {
+        width: 125px;
+        top: 17%;
+    }
+
+    .musician.left {
+        left: 0;
+    }
+
+    .musician.right {
+        right: 0;
+    }
+
+    .ornament {
+        margin: 20px auto;
+    }
+
+    .countdown-heading {
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .countdown {
+        gap: 6px;
+    }
+
+    .time-box {
+        width: 74px;
+        padding: 15px 3px;
+    }
+
+    .number {
+        font-size: 29px;
+    }
+
+    .label {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .bottom-text {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .small-text {
+        font-size: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="frame"></div>
+
+    <div class="corner top-right">❧</div>
+    <div class="corner bottom-left">❧</div>
+
+    <div class="particles" id="particles"></div>
+
+    <!-- SAME IMAGE ON BOTH SIDES -->
+
+    <img
+        src="shehnai.jfif"
+        class="musician left"
+        alt="Rajasthani shehnai musician"
+    >
+
+    <img
+        src="shehnai.jfif"
+        class="musician right"
+        alt="Rajasthani shehnai musician"
+    >
+
+    <!-- MAIN WEBSITE CONTENT -->
+
+    <main class="content">
+
+        <p class="eyebrow">
+            A New Beginning • A Royal Celebration
+        </p>
+
+        <h1 class="title">
+            Grah Pravesh
+        </h1>
+
+        <p class="subtitle">
+            HYDERABAD
+        </p>
+
+        <div class="ornament">
+            ✦ ───────── ✦
+        </div>
+
+        <p class="countdown-heading">
+            THE CELEBRATION BEGINS IN
+        </p>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <span class="number" id="days">00</span>
+                <span class="label">DAYS</span>
+            </div>
+
+            <div class="time-box">
+                <span class="number" id="hours">00</span>
+                <span class="label">HOURS</span>
+            </div>
+
+            <div class="time-box">
+                <span class="number" id="minutes">00</span>
+                <span class="label">MINUTES</span>
+            </div>
+
+            <div class="time-box">
+                <span class="number" id="seconds">00</span>
+                <span class="label">SECONDS</span>
+            </div>
+
+        </div>
+
+        <p class="bottom-text" id="message">
+            ✦ DAYS TO GO ✦
+        </p>
+
+        <p class="small-text">
+            WITH LOVE, WE WELCOME YOU
+        </p>
+
+    </main>
+
+</div>
+
+<script>
+
+/* EVENT DATE: 29 NOVEMBER 2026, 8 AM IST */
+
+const eventDate = new Date(
+    "2026-11-29T08:00:00+05:30"
+).getTime();
+
+/* COUNTDOWN FUNCTION */
+
+function updateCountdown() {
+
+    const now = Date.now();
+    const distance = eventDate - now;
+
+    if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.getElementById("message").textContent =
+            "✦ THE CELEBRATION HAS BEGUN ✦";
+
+        return;
+    }
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+/* START COUNTDOWN */
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* GOLDEN PARTICLES */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for (let i = 0; i < 35; i++) {
+
+    const particle = document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.top =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDelay =
+        Math.random() * 7 + "s";
+
+    particle.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    particleContainer.appendChild(particle);
+
+}
+
+</script>
+
+</body>
+</html>
