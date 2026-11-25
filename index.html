@@ -4,16 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Grah Pravesh | Hyderabad</title>
+<title>Grah Pravesh | 29 November 2026</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -23,513 +20,428 @@
 body {
     min-height: 100vh;
     overflow-x: hidden;
-    background: #100b07;
-    color: #e8cb83;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-.page {
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 25px;
+    color: #543817;
+    font-family: 'Montserrat', sans-serif;
 
     background:
-        radial-gradient(
-            ellipse at center,
-            #49321b 0%,
-            #24180d 48%,
-            #100b07 100%
-        );
+        radial-gradient(ellipse at 50% 45%, rgba(255,239,190,.85), transparent 55%),
+        radial-gradient(ellipse at 10% 10%, #f5d998, transparent 48%),
+        radial-gradient(ellipse at 90% 90%, #d8ae60, transparent 55%),
+        linear-gradient(135deg, #dcb96f, #f2d99d, #c99b49, #edcf8d);
 }
 
-/* GOLDEN FRAME */
+/* Satin-like golden background */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        repeating-linear-gradient(
+            115deg,
+            rgba(255,255,255,.07) 0px,
+            rgba(255,255,255,.02) 3px,
+            transparent 7px,
+            rgba(125,81,24,.035) 12px
+        ),
+        linear-gradient(
+            125deg,
+            transparent 15%,
+            rgba(255,248,215,.24) 35%,
+            transparent 55%,
+            rgba(130,83,22,.10) 75%,
+            transparent 90%
+        );
+
+    opacity: .9;
+}
+
+/* Decorative golden frame */
 
 .frame {
-    position: absolute;
-    inset: 20px;
-    border: 1px solid rgba(211,176,100,0.7);
+    position: fixed;
+    inset: 17px;
+    border: 1px solid rgba(125, 80, 25, .65);
+    outline: 1px solid rgba(255, 239, 190, .55);
+    outline-offset: 5px;
     pointer-events: none;
+    z-index: 10;
 }
 
 .frame::before,
 .frame::after {
-    content: "❧";
+    content: "✦";
     position: absolute;
-    color: #c6a15b;
-    font-size: 38px;
+    color: #8c6229;
+    font-size: 23px;
 }
 
 .frame::before {
-    top: -17px;
-    left: -8px;
+    top: -14px;
+    left: -10px;
 }
 
 .frame::after {
-    bottom: -17px;
-    right: -8px;
-    transform: rotate(180deg);
+    bottom: -14px;
+    right: -10px;
 }
 
-.corner {
-    position: absolute;
-    color: #d2ad63;
-    font-size: 30px;
-}
-
-.top-right {
-    top: 24px;
-    right: 27px;
-}
-
-.bottom-left {
-    bottom: 24px;
-    left: 27px;
-    transform: rotate(180deg);
-}
-
-/* MAIN CONTENT */
-
-.content {
-    width: 100%;
-    max-width: 1150px;
-    text-align: center;
+.container {
     position: relative;
     z-index: 2;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 75px 20px;
 }
 
-.eyebrow {
-    font-size: 15px;
+/* Main content */
+
+.top-label {
+    font-size: 11px;
     letter-spacing: 6px;
     text-transform: uppercase;
-    color: #d2b16b;
-    margin-bottom: 24px;
+    color: #76501e;
+    margin-bottom: 22px;
+    font-weight: 600;
 }
 
-.title {
-    font-size: clamp(55px, 8vw, 105px);
-    font-weight: 500;
-    line-height: 1.05;
-    color: #f4dda4;
-    text-shadow: 0 0 35px rgba(205,166,87,0.25);
+.small-divider {
+    width: 105px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #80551e, transparent);
+    margin: 0 auto 24px;
+}
+
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(38px, 6vw, 65px);
+    color: #79501e;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 9vw, 100px);
+    line-height: .95;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #553719;
+    text-shadow: 0 2px 1px rgba(255,255,255,.25);
 }
 
 .subtitle {
-    font-size: 18px;
-    letter-spacing: 11px;
-    margin-top: 18px;
-    color: #d6b56e;
-}
-
-.ornament {
-    margin: 27px auto;
-    color: #d0aa60;
-    font-size: 19px;
-    letter-spacing: 8px;
-}
-
-/* COUNTDOWN */
-
-.countdown-heading {
-    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(19px, 3vw, 27px);
     letter-spacing: 5px;
-    margin-bottom: 25px;
-    color: #d8bc7d;
+    text-transform: uppercase;
+    color: #805a27;
+    margin-top: 17px;
 }
+
+.gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin: 30px auto;
+    color: #875b20;
+    font-size: 15px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+    content: "";
+    height: 1px;
+    width: 65px;
+    background: linear-gradient(to right, transparent, #936526);
+}
+
+.gold-divider::after {
+    transform: rotate(180deg);
+}
+
+.invitation {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(19px, 3vw, 25px);
+    line-height: 1.5;
+    color: #62451f;
+    letter-spacing: 1px;
+}
+
+.date {
+    margin-top: 17px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 4vw, 37px);
+    font-weight: 600;
+    color: #694719;
+}
+
+.venue {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #795627;
+}
+
+/* Countdown */
 
 .countdown {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 16px;
+    gap: 15px;
+    margin-top: 38px;
+    flex-wrap: wrap;
 }
 
 .time-box {
-    width: 115px;
-    padding: 22px 10px;
-
-    border: 1px solid rgba(215,178,100,0.75);
-
+    width: 100px;
+    padding: 16px 8px 13px;
+    border: 1px solid rgba(120, 78, 27, .65);
     background: linear-gradient(
         145deg,
-        rgba(102,72,34,0.5),
-        rgba(24,16,9,0.85)
+        rgba(255,236,184,.75),
+        rgba(210,169,91,.45)
     );
-
     box-shadow:
-        0 0 25px rgba(194,151,65,0.10),
-        inset 0 0 15px rgba(194,151,65,0.06);
+        inset 0 1px 8px rgba(255,255,255,.4),
+        0 5px 15px rgba(92,58,18,.12);
 }
 
-.number {
+.time-box span {
     display: block;
-    font-size: 48px;
-    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 39px;
+    font-weight: 600;
+    color: #593a17;
     line-height: 1;
-    color: #f5dfa4;
-    font-variant-numeric: tabular-nums;
 }
 
-.label {
+.time-box small {
     display: block;
-    margin-top: 13px;
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: #d1b16d;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #795322;
+    margin-top: 9px;
 }
 
-.bottom-text {
-    margin-top: 36px;
-    font-size: 17px;
-    letter-spacing: 4px;
-    color: #dfc17b;
+.footer {
+    margin-top: 38px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 29px;
+    color: #76501e;
 }
 
-.small-text {
-    margin-top: 13px;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: #b99a5c;
-}
-
-/* SHEHNAI MUSICIANS */
+/* Musicians - transparent cutouts */
 
 .musician {
     position: absolute;
-    width: 255px;
+    width: clamp(190px, 24vw, 340px);
     height: auto;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+    transform: translateY(-40%);
     object-fit: contain;
-    filter: drop-shadow(0 0 18px rgba(215,174,89,0.12));
-}
-
-.musician.left {
-    left: 3%;
-}
-
-.musician.right {
-    right: 3%;
-    transform: translateY(-50%) scaleX(-1);
-}
-
-/* GOLDEN PARTICLES */
-
-.particles {
-    position: absolute;
-    inset: 0;
+    z-index: 1;
     pointer-events: none;
-    overflow: hidden;
+    filter: drop-shadow(0 12px 12px rgba(75, 47, 16, .17));
 }
 
-.particle {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: #e8cb83;
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: float 7s infinite ease-in-out;
+.musician-left {
+    left: 1.5%;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: 0.2;
-    }
-    50% {
-        transform: translateY(-30px);
-        opacity: 0.8;
-    }
+.musician-right {
+    right: 1.5%;
+    transform: translateY(-40%) scaleX(-1);
 }
 
-/* MOBILE DESIGN */
+/* Responsive design */
 
 @media (max-width: 900px) {
-
     .musician {
-        width: 175px;
-        opacity: 0.9;
+        width: 210px;
+        opacity: .85;
     }
 
-    .musician.left {
-        left: -30px;
+    .musician-left {
+        left: -55px;
     }
 
-    .musician.right {
-        right: -30px;
-    }
-
-    .time-box {
-        width: 85px;
-    }
-
-    .number {
-        font-size: 37px;
+    .musician-right {
+        right: -55px;
     }
 }
 
 @media (max-width: 600px) {
-
-    .page {
-        padding: 35px 12px;
-    }
-
-    .frame {
-        inset: 12px;
-    }
-
-    .eyebrow {
-        font-size: 10px;
-        letter-spacing: 3px;
-        margin-top: 145px;
-    }
-
-    .title {
-        font-size: 49px;
-    }
-
-    .subtitle {
-        font-size: 13px;
-        letter-spacing: 6px;
+    .container {
+        padding: 90px 15px 65px;
+        justify-content: center;
     }
 
     .musician {
-        width: 125px;
-        top: 17%;
+        width: 135px;
+        top: auto;
+        bottom: 15px;
+        opacity: .8;
     }
 
-    .musician.left {
-        left: 0;
+    .musician-left {
+        left: -28px;
     }
 
-    .musician.right {
-        right: 0;
+    .musician-right {
+        right: -28px;
     }
 
-    .ornament {
-        margin: 20px auto;
+    .top-label {
+        font-size: 9px;
+        letter-spacing: 4px;
     }
 
-    .countdown-heading {
-        font-size: 10px;
-        letter-spacing: 2px;
-        margin-bottom: 18px;
+    .subtitle {
+        letter-spacing: 3px;
     }
 
     .countdown {
-        gap: 6px;
+        gap: 9px;
+        margin-top: 28px;
     }
 
     .time-box {
-        width: 74px;
-        padding: 15px 3px;
+        width: 75px;
+        padding: 13px 5px;
     }
 
-    .number {
-        font-size: 29px;
+    .time-box span {
+        font-size: 30px;
     }
 
-    .label {
-        font-size: 9px;
+    .time-box small {
+        font-size: 8px;
         letter-spacing: 1px;
     }
 
-    .bottom-text {
-        font-size: 13px;
-        letter-spacing: 2px;
+    .footer {
+        margin-top: 28px;
+        font-size: 24px;
     }
 
-    .small-text {
-        font-size: 10px;
+    .frame {
+        inset: 11px;
     }
 }
 
+@media (max-width: 360px) {
+    .time-box {
+        width: 68px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="frame"></div>
 
-    <div class="frame"></div>
+<!-- Same musician image on both sides -->
+<img src="shehnai.png" class="musician musician-left" alt="Shehnai musician">
 
-    <div class="corner top-right">❧</div>
-    <div class="corner bottom-left">❧</div>
+<img src="shehnai.png" class="musician musician-right" alt="Shehnai musician">
 
-    <div class="particles" id="particles"></div>
+<main class="container">
 
-    <!-- SAME IMAGE ON BOTH SIDES -->
+    <div class="top-label">A New Beginning • A New Journey</div>
 
-    <img
-        src="shehnai.jfif"
-        class="musician left"
-        alt="Rajasthani shehnai musician"
-    >
+    <div class="small-divider"></div>
 
-    <img
-        src="shehnai.jfif"
-        class="musician right"
-        alt="Rajasthani shehnai musician"
-    >
+    <div class="script-title">With Divine Blessings</div>
 
-    <!-- MAIN WEBSITE CONTENT -->
+    <h1 class="main-title">GRAH PRAVESH</h1>
 
-    <main class="content">
+    <div class="subtitle">A Celebration of New Beginnings</div>
 
-        <p class="eyebrow">
-            A New Beginning • A Royal Celebration
-        </p>
+    <div class="gold-divider">✦</div>
 
-        <h1 class="title">
-            Grah Pravesh
-        </h1>
+    <p class="invitation">
+        A beautiful new chapter is about to begin.<br>
+        We look forward to celebrating this special occasion.
+    </p>
 
-        <p class="subtitle">
-            HYDERABAD
-        </p>
+    <div class="date">29 November 2026</div>
 
-        <div class="ornament">
-            ✦ ───────── ✦
+    <div class="venue">Hyderabad</div>
+
+    <div class="countdown" id="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>Days</small>
         </div>
 
-        <p class="countdown-heading">
-            THE CELEBRATION BEGINS IN
-        </p>
-
-        <div class="countdown">
-
-            <div class="time-box">
-                <span class="number" id="days">00</span>
-                <span class="label">DAYS</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="hours">00</span>
-                <span class="label">HOURS</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="minutes">00</span>
-                <span class="label">MINUTES</span>
-            </div>
-
-            <div class="time-box">
-                <span class="number" id="seconds">00</span>
-                <span class="label">SECONDS</span>
-            </div>
-
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>Hours</small>
         </div>
 
-        <p class="bottom-text" id="message">
-            ✦ DAYS TO GO ✦
-        </p>
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+        </div>
 
-        <p class="small-text">
-            WITH LOVE, WE WELCOME YOU
-        </p>
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+        </div>
 
-    </main>
+    </div>
 
-</div>
+    <div class="footer">The celebration awaits...</div>
+
+</main>
 
 <script>
-
-/* EVENT DATE: 29 NOVEMBER 2026, 8 AM IST */
-
-const eventDate = new Date(
-    "2026-11-29T08:00:00+05:30"
-).getTime();
-
-/* COUNTDOWN FUNCTION */
+const eventDate = new Date("2026-11-29T08:00:00+05:30").getTime();
 
 function updateCountdown() {
 
-    const now = Date.now();
+    const now = new Date().getTime();
     const distance = eventDate - now;
 
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
     if (distance <= 0) {
-
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
-
-        document.getElementById("message").textContent =
-            "✦ THE CELEBRATION HAS BEGUN ✦";
-
+        document.getElementById("countdown").innerHTML =
+            "<div style='font-family:Cormorant Garamond,serif;font-size:30px;color:#65451e;'>The Celebration Has Begun!</div>";
         return;
     }
 
-    const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-    );
-
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
-
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
-
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-    );
-
-    document.getElementById("days").textContent =
-        String(days).padStart(2, "0");
-
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
-
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 }
-
-/* START COUNTDOWN */
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-/* GOLDEN PARTICLES */
-
-const particleContainer =
-    document.getElementById("particles");
-
-for (let i = 0; i < 35; i++) {
-
-    const particle = document.createElement("div");
-
-    particle.className = "particle";
-
-    particle.style.left =
-        Math.random() * 100 + "%";
-
-    particle.style.top =
-        Math.random() * 100 + "%";
-
-    particle.style.animationDelay =
-        Math.random() * 7 + "s";
-
-    particle.style.animationDuration =
-        (5 + Math.random() * 5) + "s";
-
-    particleContainer.appendChild(particle);
-
-}
-
 </script>
 
 </body>
 </html>
+
